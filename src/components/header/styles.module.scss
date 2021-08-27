@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+
+  &__logo {
+    height: 70px;
+  }
+
+  &__link__wrapper {
+    display: flex;
+    margin-left: 88px;
+    align-items: center;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #595959;
+    transition: opacity 0.3s;
+
+    &__active {
+      color: #7063C4;
+    }
+
+    &__active:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  &__link:hover {
+    transition: opacity 0.3s;
+    opacity: 0.6;
+  }
+
+}
