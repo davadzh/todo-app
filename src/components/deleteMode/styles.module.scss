@@ -1,0 +1,81 @@
+@keyframes changeBackgroundFromWhiteToRed {
+  from {background: #F2F7FD;}
+  to {background: #C36363;}
+}
+@keyframes changeBackgroundFromRedToWhite {
+  from {background: #C36363;}
+  to {background: #F2F7FD;}
+}
+
+@keyframes changeBackgroundFromWhiteToPurple {
+  from {background: #F2F7FD;}
+  to {background: #7063C3;}
+}
+@keyframes changeBackgroundFromPurpleToWhite {
+  from {background: #7063C3;}
+  to {background: #F2F7FD;}
+}
+
+.delete__mode {
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #CBCBCB;
+
+    transition: 0.2s ease;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    &__OFF {
+      background: #F2F7FD;
+      border-radius: 50px;
+      text-align: center;
+      color: #CBCBCB;
+      padding: 4px 16px;
+      cursor: pointer;
+
+      //animation: changeBackgroundFromPurpleToWhite 0.3s ease;
+    }
+    &__OFF__active {
+      background: #7063C3;
+      border-radius: 50px;
+      text-align: center;
+      color: #F2F7FD;
+      padding: 4px 16px;
+      cursor: pointer;
+
+      //animation: changeBackgroundFromWhiteToPurple 0.3s ease;
+    }
+
+    &__ON {
+      background: #F2F7FD;
+      border-radius: 50px;
+      text-align: center;
+      color: #CBCBCB;
+      padding: 4px 16px;
+      cursor: pointer;
+
+      //animation: changeBackgroundFromRedToWhite 0.3s ease;
+    }
+    &__ON__active {
+      background: #C36363;
+      border-radius: 50px;
+      text-align: center;
+      color: #F2F7FD;
+      padding: 4px 16px;
+      cursor: pointer;
+
+      //animation: changeBackgroundFromWhiteToRed 0.3s ease;
+    }
+  }
+}

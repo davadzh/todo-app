@@ -1,0 +1,23 @@
+.white__button {
+  min-width: 150px;
+  background: none;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  padding: 13px;
+
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  transition: 0.1s ease;
+}
+
+.white__button:hover {
+  transition: 0.1s ease;
+  opacity: 0.7;
+}

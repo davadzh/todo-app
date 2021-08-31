@@ -1,0 +1,27 @@
+.showcase__and__example {
+  display: flex;
+  justify-content: space-between;
+}
+
+.example {
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #CBCBCB;
+    margin-bottom: 14px;
+  }
+
+  &__todo__name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #7063C3;
+    margin-bottom: 14px;
+  }
+}

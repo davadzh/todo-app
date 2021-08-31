@@ -1,0 +1,17 @@
+.mytodos {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      color: #CBCBCB;
+    }
+  }
+}

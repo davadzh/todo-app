@@ -11,21 +11,12 @@
   margin-bottom: 28px;
 }
 
-.back {
-  cursor: pointer;
-  transition: 0.1s ease;
-}
-.back:hover {
-  transition: 0.1s ease;
-  opacity: 0.7;
-}
-
 .todo__title {
 
   &__input {
     border: none;
     border-radius: 5px;
-    background: #F2F7FD;
+    background: #E1E7EE;
     padding: 3px 7px;
     outline: none;
     font-style: normal;
@@ -71,31 +62,5 @@
     cursor: default;
     background: #E1E7EE;
     color: #CBCBCB;
-  }
-}
-
-.tasks {
-  margin-top: 28px;
-
-  &__new {
-    max-width: 200px;
-    align-items: center;
-    text-align: center;
-    background: #F2F7FD;
-    border: 2px solid #7063C3;
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 40px;
-    line-height: 49px;
-    color: #7063C3;
-    cursor: pointer;
-  }
-
-  &__new:hover {
-    background: #7063C3;
-    color: #F2F7FD;
-    transition: background 0.1s ease;
   }
 }

@@ -1,0 +1,115 @@
+.todo__items {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+
+  // DEFAULT MODE
+
+  &__new__todo {
+    height: 60px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    background: #F2F7FD;
+    border: 2px solid #7063C3;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 49px;
+    color: #7063C3;
+
+    cursor: pointer;
+  }
+
+  &__new__todo:hover{
+    background: #7063C3;
+    color: #F2F7FD;
+
+    transition: background 0.1s ease;
+  }
+
+
+
+  &__todo {
+    height: 60px;
+    display: grid;
+    align-items: center;
+
+    text-align: center;
+    background: #F2F7FD;
+    border: 2px solid #CBCBCB;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #747474;
+
+    cursor: pointer;
+    transition: background 0.1s ease,
+                color 0.2s ease,
+                border 0.2s ease;
+  }
+
+  &__todo:hover {
+    background: #7063C3;
+    color: #F2F7FD;
+    border: 2px solid #7063C3;
+
+    transition: background 0.1s ease;
+  }
+
+  // DELETE MODE
+
+  &__new__todo__dm {
+    height: 60px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    background: #F2F7FD;
+    border: 2px solid #CBCBCB;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 49px;
+    color: #CBCBCB;
+
+    cursor: default;
+  }
+
+  &__todo__dm{
+    height: 60px;
+    display: grid;
+    align-items: center;
+
+    text-align: center;
+    background: #F2F7FD;
+    border: 2px solid #CBCBCB;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    color: #747474;
+
+    cursor: pointer;
+    transition: background 0.1s ease;
+  }
+
+  &__todo__dm:hover {
+    background: #C36363;
+    color: #F2F7FD !important;
+    border: 2px solid #C36363;
+
+    transition: background 0.1s ease;
+  }
+}
