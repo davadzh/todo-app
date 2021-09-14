@@ -1,57 +1,100 @@
-import React, {useState} from 'react';
-import {useHistory, useParams} from 'react-router-dom';
+import React, { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import styles from "../todo/styles.module.scss";
 import Tile from "../../components/tile";
-import {useAppSelector} from "../../redux";
+import { useAppDispatch, useAppSelector } from "../../redux";
 import Task from "../../components/task";
 import NewTask from "../../components/newTask";
+import { setTodoTitleAction } from "../../redux/reducers/todoReducer";
+import DeleteMode from "../../components/deleteMode";
+import TaskItems from "../../components/taskItems";
 
 interface TodoParamsType {
-  id: string
+  id: string;
 }
 
 const Todo = () => {
   const history = useHistory();
+  const dispatch = useAppDispatch();
   const params = useParams<TodoParamsType>();
-  const todo = useAppSelector(state=> state.todoReducer.todos.find(todo => todo.id === params.id));
-  let [creatingNewTask, setCreatingNewTask] = useState<boolean>(false);
+  const todo = useAppSelector((state) =>
+    state.todoReducer.todos.find((todo) => todo.id === params.id)
+  );
+  let [titleEditEnabled, setTitleEditEnabled] = useState<boolean>(false);
+  let [todoTitle, setTodoTitle] = useState<string>(todo?.title ?? "");
+  let [isDeleteModeActive, setIsDeleteModeActive] = useState<boolean>(false);
 
   if (!todo) {
-    history.push("/mytodos");
-  }
+    return <div>404</div>;
+  } else {
+    let closeTitleEditing = () => {
+      if (
+        todoTitle.length > 0 &&
+        todoTitle.length < 31 &&
+        todoTitle.trim() !== ""
+      ) {
+        dispatch(setTodoTitleAction({ title: todoTitle, todoId: todo.id }));
+        setTitleEditEnabled(false);
+      }
+    };
 
-  let goToMytodos = () => {
-    history.push("/mytodos");
-  }
+    return (
+      <Tile>
+        <div className={styles.header}>
+          <div className={styles.header__title}>
+            <span>
+              <span
+                onClick={() => history.push("/mytodos")}
+                className={styles.header__title__back}
+              >
+                &lt;{" "}
+              </span>
+              Todo
+            </span>
+          </div>
 
-  return (
-    <Tile>
-      <div className={styles.title} ><span><span onClick={goToMytodos} className={styles.back}>&lt; </span>Todo</span></div>
-      <div>
-        <input type="text"
-               className={styles.todo__title__input}
-               value={todo ? todo.title
-                           : ''}
-               disabled/>
-        <button disabled
-                className={styles.todo__title__accept}>+</button>
-
-        {}
-
-        <div className={styles.tasks}>
-          {!todo ? ''
-                 : todo.tasks.map(task => {
-              return <Task key={task.id}>
-                {task.name}
-              </Task>
-            })}
-
-          {!creatingNewTask ? <div className={styles.tasks__new} onClick={() => setCreatingNewTask(true)}>+</div>
-                            : <NewTask todoId={todo!.id} setCreatingNewTask={setCreatingNewTask} /> }
+          <DeleteMode
+            isActive={isDeleteModeActive}
+            setIsActive={setIsDeleteModeActive}
+          />
         </div>
-      </div>
-    </Tile>
-  );
+
+        <div>
+          {!titleEditEnabled ? (
+            <>
+              <div
+                className={styles.todo__title__input__disabled}
+                onClick={() => setTitleEditEnabled(true)}
+              >
+                {todoTitle}
+              </div>
+            </>
+          ) : (
+            <>
+              <input
+                className={styles.todo__title__input}
+                value={todoTitle}
+                onChange={(e) => setTodoTitle(e.target.value)}
+              />
+              <button
+                disabled={
+                  todoTitle.length === 0 &&
+                  todoTitle.length > 31 &&
+                  todoTitle.trim() === ""
+                }
+                className={styles.todo__title__edit}
+                onClick={closeTitleEditing}
+              >
+                OK
+              </button>
+            </>
+          )}
+
+          <TaskItems isDeleteModeActive={isDeleteModeActive} />
+        </div>
+      </Tile>
+    );
+  }
 };
 
 export default Todo;

@@ -29,6 +29,11 @@
     color: #CBCBCB;
 
     transition: 0.2s ease;
+
+    &__activation {
+      color: #C36363;
+      transition: 0.3s ease;
+    }
   }
 
   &__buttons {

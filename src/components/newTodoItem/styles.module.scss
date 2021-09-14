@@ -1,0 +1,28 @@
+.new__todo {
+  height: 60px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  background: #F2F7FD;
+  border: 2px solid #7063C3;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 49px;
+  color: #7063C3;
+  cursor: pointer;
+
+  transition: background 0.1s ease,
+  color 0.2s ease,
+  border 0.2s ease;
+
+  &:hover {
+    background: #7063C3;
+    color: #F2F7FD;
+
+    transition: background 0.1s ease;
+  }
+}
+

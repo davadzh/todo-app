@@ -1,0 +1,27 @@
+.task {
+  background: #F2F7FD;
+  border: 2px solid #CBCBCB;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 20px 10px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #747474;
+  cursor: pointer;
+  transition: 0.1s ease;
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  &:hover {
+    transition: 0.1s ease;
+    border: 2px solid #7063C3;
+    color: #7063C3;
+  }
+}
+
+.task:hover {
+
+}

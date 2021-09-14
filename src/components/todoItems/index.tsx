@@ -1,78 +1,51 @@
-import React, {useState} from 'react';
-import {useAppDispatch, useAppSelector} from "../../redux";
+import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux";
 import styles from "./styles.module.scss";
-import Modal from "react-modal";
 import DeleteModal from "../modals/deleteModal";
-import {removeTodoAction} from "../../redux/reducers/todoReducer";
-import {useHistory} from "react-router-dom";
+import { removeTodoAction } from "../../redux/reducers/todoReducer";
+import TodoItem from "../todoItem";
+import NewTodoItem from "../newTodoItem";
 
 interface TodoItemsPropsType {
-  isDeleteModeActive: boolean
+  isDeleteModeActive: boolean;
 }
 
-Modal.setAppElement('#deleteModal');
-
-const TodoItems = ({isDeleteModeActive}: TodoItemsPropsType) => {
-  const todos = useAppSelector(state=> state.todoReducer.todos);
+const TodoItems = ({ isDeleteModeActive }: TodoItemsPropsType) => {
   const dispatch = useAppDispatch();
-  const history = useHistory();
 
-  let [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  let [modalTextItem, setModalTextItem] = useState<string>('');
-  let [todoId, setTodoId] = useState<string | null>(null);
+  let [deletingTodoId, setDeletingTodoId] = useState<string | null>(null);
+  let [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
+  let [deleteModalTitle, setDeleteModalTitle] = useState<string>("");
 
-  let todoItemAction = (id: string | null, title: string) => {
-    if (id) {
-      if (isDeleteModeActive) {
-        setTodoId(id);
-        setModalTextItem(title);
-        setIsModalOpen(true);
-      }
-      else {
-        history.push(`/mytodos/${id}`);
-      }
+  const todos = useAppSelector((state) => state.todoReducer.todos);
+
+  let onTodoDelete = () => {
+    if (deletingTodoId) {
+      dispatch(removeTodoAction(deletingTodoId));
+      setIsDeleteModalOpen(false);
     }
-  }
-
-  let newTodoAction = () => {
-    if (!isDeleteModeActive) {
-      history.push(`/new`);
-    }
-  }
-
-  let onDelete = (id: string) => {
-    dispatch(removeTodoAction(id));
-    setIsModalOpen(false);
-  }
+  };
 
   return (
     <div className={styles.todo__items}>
-      <DeleteModal isModalOpen={isModalOpen}
-                   setIsModalOpen={setIsModalOpen}
-                   textItem={modalTextItem}
-                   onDelete={() => onDelete(todoId!)}
+      <DeleteModal
+        isModalOpen={isDeleteModalOpen}
+        setIsModalOpen={setIsDeleteModalOpen}
+        textItem={deleteModalTitle}
+        onDelete={onTodoDelete}
       />
 
-      <div className={isDeleteModeActive ? styles.todo__items__new__todo__dm
-                                         : styles.todo__items__new__todo}
-           onClick={newTodoAction}
-      >
-        +
-      </div>
+      <NewTodoItem />
 
-      {todos.map(todo =>
-        <div key={todo.id}
-             onClick={() => todoItemAction(todo.id, todo.title)}
-             className={isDeleteModeActive ? styles.todo__items__todo__dm
-                                           : styles.todo__items__todo}
-             style={isDeleteModeActive ? {border: "2px solid #C36363", transition: "0.2s ease", color: "#C36363"}
-                                       : {}}
-        >
-          {todo.title.length > 20 ? todo.title.substr(0, 20) + "..."
-                                  : todo.title}
-        </div>
-      )}
-
+      {todos.map((todo) => (
+        <TodoItem
+          isDeleteModeActive={isDeleteModeActive}
+          setIsDeleteModalOpen={setIsDeleteModalOpen}
+          setDeleteModalTitle={setDeleteModalTitle}
+          setDeletingTodoId={setDeletingTodoId}
+          todo={todo}
+        />
+      ))}
     </div>
   );
 };

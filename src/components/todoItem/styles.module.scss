@@ -1,24 +1,32 @@
-.task {
+// DEFAULT MODE
+
+.todo {
+  height: 60px;
+  display: grid;
+  align-items: center;
+
+  text-align: center;
   background: #F2F7FD;
   border: 2px solid #CBCBCB;
   box-sizing: border-box;
   border-radius: 5px;
-  padding: 20px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #747474;
-  cursor: pointer;
-  transition: 0.1s ease;
 
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  color: #747474;
+
+  cursor: pointer;
+  transition: background 0.1s ease,
+              color 0.2s ease,
+              border 0.2s ease;
 
   &:hover {
-    transition: 0.1s ease;
+    background: #7063C3;
+    color: #F2F7FD;
     border: 2px solid #7063C3;
-    color: #7063C3;
+
+    transition: background 0.1s ease;
   }
 
   &__dm {
@@ -38,4 +46,3 @@
     }
   }
 }
-
