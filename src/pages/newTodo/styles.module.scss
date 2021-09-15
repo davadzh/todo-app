@@ -64,3 +64,14 @@
     color: #CBCBCB;
   }
 }
+
+@media (max-width: 480px) {
+  .todo__title {
+    display: flex;
+    justify-content: space-between;
+
+    &__input {
+      overflow: hidden;
+    }
+  }
+}

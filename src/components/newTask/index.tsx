@@ -20,7 +20,7 @@ const NewTask = ({ todoId, setCreatingNewTask }: NewTaskPropsType) => {
   };
 
   let addTask = () => {
-    if (taskValue.length > 0 && taskValue.length < 300) {
+    if (taskValue.trim().length > 0 && taskValue.length < 300) {
       setCreatingNewTask(false);
 
       const newId = uuidv4();

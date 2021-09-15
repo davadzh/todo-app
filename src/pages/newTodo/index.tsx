@@ -14,13 +14,13 @@ const NewTodo = () => {
 
   let changeTodoName = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length < 31) {
-      setTodoName(e.target.value);
-      setDisableCreate(e.target.value.length === 0);
+      setTodoName(e.target.value.trim());
+      setDisableCreate(e.target.value.trim().length === 0);
     }
   };
 
   let createNewTodo = () => {
-    if (!disableCreate && todoName.length > 0) {
+    if (!disableCreate && todoName.trim().length > 0) {
       const newId = uuidv4();
 
       dispatch(
@@ -38,7 +38,7 @@ const NewTodo = () => {
   return (
     <Tile>
       <div className={styles.title}>New Todo</div>
-      <div>
+      <div className={styles.todo__title}>
         <input
           type="text"
           placeholder={"Enter Todo name"}

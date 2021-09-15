@@ -19,8 +19,6 @@ const TodoItem = ({
   setIsDeleteModalOpen,
 }: TodoItemPropsType) => {
   const history = useHistory();
-  const title =
-    todo.title.length > 20 ? todo.title.substr(0, 20) + "..." : todo.title;
 
   let todoItemAction = (id: string | null, title: string) => {
     if (id) {
@@ -44,7 +42,7 @@ const TodoItem = ({
           : styles.todo
       }
     >
-      {title}
+      {todo.title}
     </div>
   );
 };

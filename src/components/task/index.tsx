@@ -58,7 +58,7 @@ const Task = ({
       }
       onClick={() => taskItemAction(todoId, task.id, task.name)}
     >
-      {children}
+      <div className={styles.task__text}>{children}</div>
       {!isDeleteModeActive && <TaskCheckbox isDone={isDone} />}
     </div>
   );

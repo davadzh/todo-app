@@ -2,13 +2,15 @@
 
 .todo {
   height: 60px;
-  display: grid;
+  padding: 0 10px;
+  line-height: 60px;
   align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   text-align: center;
   background: #F2F7FD;
   border: 2px solid #CBCBCB;
-  box-sizing: border-box;
   border-radius: 5px;
 
   font-style: normal;

@@ -1,6 +1,6 @@
 .task__checkbox {
   border-radius: 50px;
-  width: 15px;
+  min-width: 15px;
   height: 15px;
   border: 2px solid #7063C3;
   background: none;
@@ -9,7 +9,7 @@
 
 .task__checkbox__done {
   border-radius: 50px;
-  width: 15px;
+  min-width: 15px;
   height: 15px;
   border: 2px solid #7063C3;
   background: #7063C3;

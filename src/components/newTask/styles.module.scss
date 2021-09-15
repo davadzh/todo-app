@@ -1,9 +1,10 @@
 .new__task {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   &__input {
-    max-width: 200px;
+    width: 100%;
     align-items: center;
     background: #F2F7FD;
     border: 2px solid #7063C3;
@@ -19,7 +20,6 @@
     padding: 14px 10px;
 
     color: #7063C3;
-    float: left;
   }
 
   &__accept {
@@ -42,39 +42,5 @@
   .new__task {
     display: flex;
     align-items: center;
-
-    &__input {
-      max-width: 100%;
-      align-items: center;
-      background: #F2F7FD;
-      border: 2px solid #7063C3;
-      box-sizing: border-box;
-      border-radius: 5px;
-
-      outline: none;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
-      display: flex;
-      padding: 14px 10px;
-
-      color: #7063C3;
-      float: left;
-    }
-
-    &__accept {
-      height: 30px;
-      width: 30px;
-      margin-left: 11px;
-      background: #E1E7EE;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-      color: #7063C3;
-      cursor: pointer;
-      font-size: 25px;
-      transition: 0.1s ease;
-    }
   }
 }

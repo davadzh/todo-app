@@ -30,6 +30,7 @@
 .todo__title {
 
   &__input {
+    overflow: hidden;
     border: none;
     border-radius: 5px;
     background: #E1E7EE;
@@ -55,6 +56,7 @@
     }
 
     &__disabled {
+      word-break: break-word;
       width: max-content;
       max-width: 100%;
       border: none;
@@ -137,12 +139,12 @@
 
   .todo__title {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 
     &__input__disabled {
-
       display: block;
       width: auto;
     }
   }
 }
-
