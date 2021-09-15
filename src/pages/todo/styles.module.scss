@@ -125,3 +125,24 @@
   }
 }
 
+
+@media (max-width: 480px) {
+  .header {
+    display: block;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .todo__title {
+    margin-top: 20px;
+
+    &__input__disabled {
+
+      display: block;
+      width: auto;
+    }
+  }
+}
+

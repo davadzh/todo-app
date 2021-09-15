@@ -25,3 +25,10 @@
     margin-bottom: 14px;
   }
 }
+
+
+@media (max-width: 480px) {
+  .showcase__and__example {
+    display: block;
+  }
+}

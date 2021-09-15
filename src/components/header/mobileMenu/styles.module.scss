@@ -1,0 +1,38 @@
+.mobile__menu {
+  display: none;
+}
+
+
+@media (max-width: 480px) {
+  .mobile__menu {
+    transform: translateX(-100vw);
+    transition: transform 0.2s ease;
+
+    position: absolute;
+    min-height: 100vh;
+    z-index: 99;
+
+
+    width: 100%;
+    font-size: 20px;
+    background: rgba(112, 99, 196, 0.7);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > div {
+      height: 15vh;
+
+      & > a {
+        color: white;
+      }
+    }
+
+    &__active {
+      transition: transform 0.2s ease;
+      transform: translateX(0);
+    }
+  }
+}

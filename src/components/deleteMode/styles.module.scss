@@ -84,3 +84,13 @@
     }
   }
 }
+
+
+@media (max-width: 480px) {
+  .delete__mode {
+
+    &__buttons {
+      justify-content: flex-start;
+    }
+  }
+}

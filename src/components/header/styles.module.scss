@@ -2,9 +2,17 @@
   display: flex;
   flex-direction: row;
   height: 90px;
+  margin-bottom: 34px;
 
   &__logo {
     height: 70px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+      transition: 0.2s ease;
+    }
   }
 
   &__link__wrapper {
@@ -35,4 +43,33 @@
     opacity: 0.6;
   }
 
+  &__burger {
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header {
+    margin: auto auto 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+
+    &__link__wrapper {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      line-height: 70px;
+      z-index: 100;
+
+      & > img {
+        max-height: 30px;
+      }
+    }
+  }
 }

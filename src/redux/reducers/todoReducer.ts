@@ -27,45 +27,7 @@ export interface TodosDefaultStateType {
 }
 
 const todosDefaultState: TodosDefaultStateType = {
-  todos: [
-    {
-      id: "1",
-      title: "Website Creating",
-      tasks: [
-        {
-          id: "1",
-          name: "Website",
-          isDone: false,
-        },
-        {
-          id: "2",
-          name: "Backend",
-          isDone: false,
-        },
-      ],
-    },
-    {
-      id: "2",
-      title: "Zhenya frontend",
-      tasks: [],
-    },
-    {
-      id: "3",
-      title:
-        "Writing a novel with a cool plot Writing a novel with a cool plotWriting a novel with a cool plotWriting a novel with a cool plot",
-      tasks: [],
-    },
-    {
-      id: "4",
-      title: "Website Creating",
-      tasks: [],
-    },
-    {
-      id: "5",
-      title: "Website Creating",
-      tasks: [],
-    },
-  ],
+  todos: [],
 };
 
 export interface AddTaskType {

@@ -9,9 +9,7 @@ const Layout: React.FC<any> = ({ children }) => {
     <>
       <div className={style.container}>
         <Header />
-        <WhiteSpace />
         {children}
-        <WhiteSpace />
         <Footer />
       </div>
     </>

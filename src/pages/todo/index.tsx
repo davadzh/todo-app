@@ -61,16 +61,16 @@ const Todo = () => {
 
         <div>
           {!titleEditEnabled ? (
-            <>
+            <div className={styles.todo__title}>
               <div
                 className={styles.todo__title__input__disabled}
                 onClick={() => setTitleEditEnabled(true)}
               >
                 {todoTitle}
               </div>
-            </>
+            </div>
           ) : (
-            <>
+            <div className={styles.todo__title}>
               <input
                 className={styles.todo__title__input}
                 value={todoTitle}
@@ -87,7 +87,7 @@ const Todo = () => {
               >
                 OK
               </button>
-            </>
+            </div>
           )}
 
           <TaskItems isDeleteModeActive={isDeleteModeActive} />

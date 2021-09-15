@@ -15,3 +15,18 @@
     }
   }
 }
+
+
+@media (max-width: 480px) {
+  .mytodos {
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

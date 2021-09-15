@@ -61,3 +61,31 @@
     }
   }
 }
+
+
+@media (max-width: 480px) {
+  .delete__modal {
+    padding: 5%;
+    max-width: available;
+    width: 90%;
+    margin: auto;
+
+    &__buttons {
+      display: flex;
+      margin-top: 30px;
+      flex-direction: column;
+
+      &__cancel {
+        height: 45px;
+        min-width: max-content;
+      }
+
+      &__delete {
+        margin-top: 20px;
+        height: 45px;
+        min-width: max-content;
+      }
+
+    }
+  }
+}

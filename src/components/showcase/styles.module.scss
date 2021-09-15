@@ -33,3 +33,24 @@
     margin-top: 50px;
   }
 }
+
+
+@media (max-width: 480px) {
+  .showcase {
+    width: 70%;
+    background: url("../../assets/images/showcase.png") no-repeat;
+    background-size: cover;
+    padding: 10%;
+    border-radius: 10px;
+    margin: auto auto 30px;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__buttons__pair {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}

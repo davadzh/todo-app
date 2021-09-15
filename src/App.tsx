@@ -5,8 +5,9 @@ import Author from "./pages/author";
 import Home from "./pages/home";
 import Todo from "./pages/todo";
 import NewTodo from "./pages/newTodo";
+import MyTodos from "./pages/mytodos";
 
-const MyTodos = React.lazy(() => import("./pages/mytodos"));
+//const MyTodos = React.lazy(() => import("./pages/mytodos"));
 
 function App() {
   return (
