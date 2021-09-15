@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "homepage": "https://davadzh.github.io/todo-app/",
+  "homepage": "https://davadzh.github.io/todo-app",
+  "name": "todo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
