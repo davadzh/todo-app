@@ -17,10 +17,10 @@ const Showcase = () => {
       </p>
 
       <div className={styles.showcase__buttons__pair}>
-        <PurpleFilledButton onClick={() => history.push("/new")}>
+        <PurpleFilledButton onClick={() => history.push("/todo-app/new")}>
           Create TODO
         </PurpleFilledButton>
-        <WhiteOutlinedButton onClick={() => history.push("/author")}>
+        <WhiteOutlinedButton onClick={() => history.push("/todo-app/author")}>
           About
         </WhiteOutlinedButton>
       </div>

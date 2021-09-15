@@ -6,7 +6,10 @@ const NewTodoItem = () => {
   let history = useHistory();
 
   return (
-    <div className={styles.new__todo} onClick={() => history.push("/new")}>
+    <div
+      className={styles.new__todo}
+      onClick={() => history.push("/todo-app/new")}
+    >
       +
     </div>
   );

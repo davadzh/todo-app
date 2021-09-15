@@ -29,7 +29,7 @@ const TodoItem = ({
         setDeleteModalTitle(title);
         setIsDeleteModalOpen(true);
       } else {
-        history.push(`/mytodos/${id}`);
+        history.push(`/todo-app/mytodos/${id}`);
       }
     }
   };

@@ -31,7 +31,7 @@ const NewTodo = () => {
         })
       );
 
-      history.push(`/mytodos/${newId}`);
+      history.push(`/todo-app/mytodos/${newId}`);
     }
   };
 

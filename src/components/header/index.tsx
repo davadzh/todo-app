@@ -15,9 +15,9 @@ const Header = () => {
   let [isMobileMenuActive, setIsMobileMenuActive] = useState<boolean>(false);
 
   let links: LinkType[] = [
-    { to: "/", title: "Home" },
-    { to: "/mytodos", title: "My Todos" },
-    { to: "/author", title: "Author" },
+    { to: "/todo-app/", title: "Home" },
+    { to: "/todo-app/mytodos", title: "My Todos" },
+    { to: "/todo-app/author", title: "Author" },
   ];
 
   return (
@@ -31,7 +31,7 @@ const Header = () => {
       <header className={styles.header}>
         <Logo
           className={styles.header__logo}
-          onClick={() => history.push("/")}
+          onClick={() => history.push("/todo-app/")}
         />
 
         {links.map((link) => {

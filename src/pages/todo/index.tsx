@@ -44,7 +44,7 @@ const Todo = () => {
           <div className={styles.header__title}>
             <span>
               <span
-                onClick={() => history.push("/mytodos")}
+                onClick={() => history.push("/todo-app/mytodos")}
                 className={styles.header__title__back}
               >
                 &lt;{" "}

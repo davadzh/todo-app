@@ -14,11 +14,11 @@ function App() {
     <Suspense fallback={<div>Загрузка...</div>}>
       <Layout>
         <Switch>
-          <Route path={"/mytodos"} exact render={() => <MyTodos />} />
-          <Route path={"/mytodos/:id"} exact render={() => <Todo />} />
-          <Route path={"/new"} exact render={() => <NewTodo />} />
-          <Route path={"/author"} exact render={() => <Author />} />
-          <Route path={"/"} exact render={() => <Home />} />
+          <Route path={"/todo-app/mytodos"} exact render={() => <MyTodos />} />
+          <Route path={"/todo-app/mytodos/:id"} exact render={() => <Todo />} />
+          <Route path={"/todo-app/new"} exact render={() => <NewTodo />} />
+          <Route path={"/todo-app/author"} exact render={() => <Author />} />
+          <Route path={"/todo-app/"} exact render={() => <Home />} />
         </Switch>
       </Layout>
     </Suspense>
